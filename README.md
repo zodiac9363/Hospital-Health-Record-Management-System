@@ -85,7 +85,9 @@ Compile and run:
 javac Main.java
 java Main
 ```
-
+---
+###UI OUTLOOK
+![UI Outlook](https://github.com/zodiac9363/Hospital-Health-Record-Management-System/blob/main/Picture1.png)
 ---
 
 ##  Modules
