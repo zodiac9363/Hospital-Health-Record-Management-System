@@ -1,0 +1,93 @@
+# Open Command Prompt and run these commands:
+password1448P#
+mysql -u root -p
+
+# Enter your password, then run in MySQL:
+
+CREATE DATABASE IF NOT EXISTS health_record_db;
+
+USE health_record_db;
+
+SOURCE d:/health-record-system/schema.sql;
+
+SHOW TABLES;
+
+SELECT * FROM Patient;
+
+SELECT * FROM Doctor;
+
+SELECT * FROM Appointment;
+
+EXIT;
+
+# Back in Command Prompt:
+
+cd d:\health-record-system
+
+javac -cp lib\mysql-connector-java-9.x.x.jar src\Main.java
+
+java -cp .\lib\mysql-connector-java-9.x.x.jar;.\src Main
+
+
+
+Open MySQL
+mysql -u root -p
+
+Reset and load schema
+DROP DATABASE IF EXISTS health_record_db;
+CREATE DATABASE health_record_db;
+USE health_record_db;
+SOURCE d:/health-record-system/schema.sql;
+SHOW TABLES;
+
+Quick data check
+SELECT COUNT() AS patients FROM Patient;
+SELECT COUNT() AS doctors FROM Doctor;
+SELECT COUNT() AS appointments FROM Appointment;
+SELECT COUNT() AS records FROM Medical_Record;
+SELECT COUNT(*) AS prescriptions FROM Prescription;
+
+CRUD demo directly in MySQL
+
+CREATE (add one patient)
+INSERT INTO Patient (name, dob, gender, contact, email, address, blood_group)
+VALUES ('Demo User','1999-01-15','Male','9000000001','demo.user@email.com','Demo Street','O+');
+
+READ (view patient)
+SELECT patient_id, name, contact, email FROM Patient WHERE contact='9000000001';
+
+UPDATE (change contact/email)
+UPDATE Patient
+SET contact='9000000002', email='demo.user2@email.com'
+WHERE contact='9000000001';
+
+READ after update
+SELECT patient_id, name, contact, email FROM Patient WHERE name='Demo User';
+
+DELETE (remove patient)
+DELETE FROM Patient WHERE name='Demo User';
+
+READ after delete (should return empty)
+SELECT patient_id, name, contact, email FROM Patient WHERE name='Demo User';
+
+Exit MySQL
+EXIT;
+
+Compile and run Java app (PowerShell/CMD)
+cd d:\health-record-system
+javac -cp lib\mysql-connector-java-9.x.x.jar Main.java
+java -cp .\lib\mysql-connector-java-9.x.x.jar;.\src Main
+
+CRUD demo from Java menu (for screenshots)
+Patient CREATE: 1 -> 2
+Patient READ: 1 -> 1
+Patient UPDATE: 1 -> 3
+Patient DELETE: 1 -> 4
+Doctor CREATE: 2 -> 2
+Doctor READ: 2 -> 1
+Appointment CREATE: 3 -> 2
+Appointment READ: 3 -> 1
+Prescription CREATE: 5 -> 2
+Prescription READ: 5 -> 1
+
+Exit app
