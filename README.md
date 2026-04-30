@@ -90,7 +90,8 @@ java Main
 
 
 
-![UI Out](https://github.com/zodiac9363/Hospital-Health-Record-Management-System/blob/main/Picture1.png)(https://github.com/zodiac9363/Hospital-Health-Record-Management-System/blob/main/Picture2.png)
+![UI Out](https://github.com/zodiac9363/Hospital-Health-Record-Management-System/blob/main/Picture1.png)
+![UI](https://github.com/zodiac9363/Hospital-Health-Record-Management-System/blob/main/Picture2.png)
 ---
 
 ##  Modules
